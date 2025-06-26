@@ -1,0 +1,62 @@
+<WeatherBox>:
+    orientation: 'vertical'
+    padding: 30
+    spacing: 25
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.2, 1  # Dark blue background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: "🌤️ Weather Elegance"
+        font_size: 32
+        bold: True
+        color: 0.8, 0.9, 1, 1
+        size_hint_y: None
+        height: 60
+
+    TextInput:
+        id: city_input
+        hint_text: "Enter City Name"
+        multiline: False
+        size_hint_y: None
+        height: 50
+        font_size: 18
+        background_color: 0.2, 0.2, 0.3, 1
+        foreground_color: 1, 1, 1, 1
+        cursor_color: 1, 1, 1, 1
+        padding: 10
+
+    Button:
+        text: "☁️ Fetch Weather"
+        size_hint_y: None
+        height: 50
+        font_size: 18
+        background_color: 0.3, 0.5, 1, 1
+        on_press: root.auto_update()
+
+    Button:
+        text: "📤 Export Data to CSV"
+        size_hint_y: None
+        height: 50
+        font_size: 18
+        background_color: 0.2, 0.7, 0.6, 1
+        on_press: root.export()
+
+    Label:
+        id: result
+        text: ""
+        markup: True
+        font_size: 20
+        color: 1, 1, 1, 1
+        halign: 'center'
+        valign: 'middle'
+        text_size: self.size
+
+
+
+
+
+
